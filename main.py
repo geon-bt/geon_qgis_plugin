@@ -174,7 +174,7 @@ class Giswater(QObject):
         plugin_dir = os.path.dirname(__file__)
         global_vars.plugin_dir = plugin_dir
         global_vars.iface = self.iface
-        self.plugin_name = tools_qgis.get_plugin_metadata('name', 'geon_qgis_plugin', plugin_dir)
+        self.plugin_name = tools_qgis.get_plugin_metadata('name', 'giswater', plugin_dir)
         self.icon_folder = f"{plugin_dir}{os.sep}icons{os.sep}dialogs{os.sep}24x24{os.sep}"
         major_version = tools_qgis.get_major_version(plugin_dir=plugin_dir)
         user_folder_dir = f'{tools_os.get_datadir()}{os.sep}{self.plugin_name.capitalize()}{os.sep}{major_version}'
@@ -218,7 +218,7 @@ class Giswater(QObject):
         global_vars.logger.set_logger_parameters(min_log_level, log_limit_characters, log_db_limit_characters)
 
         # Enable Python console and Log Messages panel if parameter 'enable_python_console' = True
-        python_enable_console = tools_gw.get_config_parser('system', 'enable_python_console', 'project', 'geon_qgis_plugin')
+        python_enable_console = tools_gw.get_config_parser('system', 'enable_python_console', 'project', 'giswater')
         if python_enable_console == 'TRUE':
             tools_qgis.enable_python_console()
 
