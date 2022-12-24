@@ -1,5 +1,5 @@
 """
-This file is part of Giswater 3
+This file is part of GeonQgisPlugin 3
 The program is free software: you can redistribute it and/or modify it under the terms of the GNU
 General Public License as published by the Free Software Foundation, either version 3 of the License,
 or (at your option) any later version.
@@ -269,29 +269,32 @@ class GwAdminButton:
         """"""
         self.dlg_readsql.geon_open_project.setEnabled(False)
         self.geon_projects = []
+        rows = ['']
         tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
         self.geon_dict['schema'] = tools_qt.get_text(self.dlg_readsql, 'project_schema_name')
-        try:
-            url = f"http://{self.geon_dict['host']}:8088/api/v1/geon/projects/{self.geon_dict['schema']}"
-            payload = ""
-            headers = {
-            'Content-Type': 'application/json'
-            }
-            response = requests.request("GET", url, headers=headers, data=payload)
-            rows = json.loads(response.text)
-            for row in rows:
-                elem = [row, row]
-                self.geon_projects.append(elem)  
-            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')     
-            self.dlg_readsql.geon_open_project.setEnabled(True)     
-        except:
-            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'Something went wrong or there is no project in your schema')
-            elem = ['','']   
-            self.dlg_readsql.geon_open_project.setEnabled(False)     
-            self.geon_project_list.append(elem)
+        sql = (f"SELECT EXISTS (SELECT * FROM information_schema.tables "
+                   f"WHERE table_schema = '{self.geon_dict['schema']}' "
+                   f"AND table_name = 'qgis_projects')")
+        exists = tools_db.get_row(sql)
+        if exists and str(exists[0]) == 'True':
+            sql = f"SELECT name FROM {self.geon_dict['schema']}.qgis_projects"
+            result = tools_db.get_row(sql)
+            if result is not None:
+                rows = result 
+                self.dlg_readsql.geon_open_project.setEnabled(True)  
+                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
+            else:
+                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No project found in your table') 
+                self.dlg_readsql.geon_open_project.setEnabled(False)  
+        else:   
+            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'Couldnt find your project table in schema')
+            self.dlg_readsql.geon_open_project.setEnabled(False)  
+                
+        for row in rows:
+            elem = [row, row]
+            self.geon_projects.append(elem) 
         tools_qt.fill_combo_values(self.dlg_readsql.geon_project_list, self.geon_projects, 1)
         self.geon_dict['project'] = tools_qt.get_text(self.dlg_readsql, 'geon_project_list')
-
         
         
     def geon_select_project(self):
@@ -435,7 +438,7 @@ class GwAdminButton:
         msg = "Are you sure to update the project schema to last version?"
         result = tools_qt.show_question(msg, "Info")
         if result:
-            # Manage Log Messages panel and open tab Giswater PY
+            # Manage Log Messages panel and open tab GeonQgisPlugin PY
             message_log = self.iface.mainWindow().findChild(QDockWidget, 'MessageLog')
             message_log.setVisible(True)
             QgsMessageLog.logMessage("", f"{global_vars.plugin_name.capitalize()} PY", 0)
@@ -961,7 +964,7 @@ class GwAdminButton:
         tools_qt.set_combo_value(self.cmb_connection, str(last_connection), 1)
 
         # Set title
-        window_title = f'Giswater ({self.plugin_version})'
+        window_title = f'GeonQgisPlugin ({self.plugin_version})'
         self.dlg_readsql.setWindowTitle(window_title)
 
         self.form_enabled = True
@@ -1149,7 +1152,7 @@ class GwAdminButton:
         project = QgsProject.instance()
         project.read(qgs_path)
 
-        # Load Giswater plugin
+        # Load GeonQgisPlugin plugin
         file_name = os.path.basename(self.plugin_dir)
         reloadPlugin(f"{file_name}")
 
@@ -1767,7 +1770,7 @@ class GwAdminButton:
             self.lbl_schema_name.setText(str(schema_name))
 
         # Update windowTitle
-        window_title = f'Giswater ({self.plugin_version})'
+        window_title = f'GeonQgisPlugin ({self.plugin_version})'
         self.dlg_readsql.setWindowTitle(window_title)
 
         if schema_name == 'null' and self.form_enabled:

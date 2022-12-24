@@ -1,5 +1,5 @@
 [general]
-name=geon_qgis_plugin
+name=giswater
 qgisMinimumVersion=3.10
 qgisMaximumVersion=3.99
 description=Plugin to manage water networks (water supply, sewerage and urban drainage) using QGIS and PostGIS-PostgreSQL(from 9.5 to 14.x)
@@ -17,10 +17,10 @@ Changelog=Version 3.5.030
     - Allow QLineEdit & QTextEdit to have tooltips via Qt translation
     - Other bug fixes
 
-tags= geon_qgis_plugin, water networks, sewerage, urban drainage, EPANET, SWMM
+tags= giswater, water networks, sewerage, urban drainage, EPANET, SWMM
 homepage=https://www.giswater.org
-repository=https://github.com/geon-bt/geon_qgis_plugin
-tracker=https://github.com/geon-bt/geon_qgis_plugin/issues
+repository=https://github.com/giswater/giswater_qgis_plugin
+tracker=https://github.com/giswater/giswater_qgis_plugin/issues
 category=Plugins
 icon=icons/dialogs/20x20/giswater.png
 experimental=False
