@@ -383,7 +383,7 @@ def create_body(form='', feature='', filter_fields='', extras=None):
         data += ', ' + extras
     data += f'}}}}$$'
     body = "" + client + form + feature + data
-    
+
     return body
 
 
@@ -2699,7 +2699,6 @@ def set_tablemodel_config(dialog, widget, table_name, sort_order=0, isQStandardI
            f" WHERE tablename = '{table_name}'"
            f" ORDER BY columnindex")
     rows = tools_db.get_rows(sql)
-
     if not rows:
         return
 

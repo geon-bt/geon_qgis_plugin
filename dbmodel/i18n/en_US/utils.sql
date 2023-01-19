@@ -41,11 +41,9 @@ INSERT INTO om_visit_parameter_type VALUES ('OTHER');
 
 -- Records of doc type table
 -- ----------------------------
-INSERT INTO doc_type VALUES ('AS_BUILT');
-INSERT INTO doc_type VALUES ('INCIDENT');
-INSERT INTO doc_type VALUES ('WORK RAPPORT');
-INSERT INTO doc_type VALUES ('OTHER');
-INSERT INTO doc_type VALUES ('PICTURE');
+INSERT INTO doc_type VALUES ('DOCUMENTS(PDF)');
+INSERT INTO doc_type VALUES ('PHOTOS(PNG,JPG,JPEG,BMP)');
+INSERT INTO doc_type VALUES ('VIDEOS(MP4,AVI,ASF)');
 
 -- Records of price_value_unit
 -- ----------------------------

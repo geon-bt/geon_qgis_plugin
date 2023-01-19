@@ -648,7 +648,6 @@ def fill_table(qtable, table_name, expr_filter=None, edit_strategy=QSqlTableMode
     # Check for errors
     if model.lastError().isValid():
         tools_log.log_warning(f"fill_table: {model.lastError().text()}")
-
     # Attach model to tableview
     qtable.setModel(model)
 

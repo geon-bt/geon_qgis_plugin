@@ -185,7 +185,6 @@ class GwInfo(QObject):
             tools_qgis.set_cursor_wait()
             json_result = tools_gw.execute_procedure(function_name, body, rubber_band=self.rubber_band)
             tools_qgis.restore_cursor()
-
             if json_result in (None, False):
                 return False, None
 
@@ -1957,6 +1956,7 @@ class GwInfo(QObject):
                 thread = False
 
         json_result = tools_gw.execute_procedure('gw_fct_setfields', body, log_sql=True)
+        
         if not json_result:
             QgsProject.instance().blockSignals(False)
             return False
@@ -2798,6 +2798,7 @@ class GwInfo(QObject):
         list_object_id = ""
         row_index = ""
         list_id = ""
+        geon_list = ""
         for i in range(0, len(selected_list)):
             row = selected_list[i].row()
             object_id = widget.model().record(row).value("doc_id")
@@ -2806,9 +2807,11 @@ class GwInfo(QObject):
                 object_id = widget.model().record(row).value("element_id")
             inf_text += str(object_id) + ", "
             list_id += str(id_) + ", "
+            geon_list = geon_list + "'"+ str(object_id) + "', "
             list_object_id = list_object_id + str(object_id) + ", "
             row_index += str(row + 1) + ", "
 
+        geon_list = geon_list[:-2]
         list_object_id = list_object_id[:-2]
         list_id = list_id[:-2]
         message = "Are you sure you want to delete these records?"
@@ -2816,6 +2819,9 @@ class GwInfo(QObject):
         if answer:
             sql = f"DELETE FROM {table_name} WHERE id::integer IN ({list_id})"
             tools_db.execute_sql(sql, log_sql=False)
+            if re.search('doc_.+', table_name):
+                sql = f"DELETE FROM v_ui_doc WHERE id IN ({geon_list})"
+                tools_db.execute_sql(sql, log_sql=False)     
             widget.model().select()
 
 
@@ -3795,7 +3801,6 @@ class GwInfo(QObject):
         message = tools_qt.fill_table(widget, f"{self.schema_name}.{table_name}", expr_filter)
         if message:
             tools_qgis.show_warning(message, dialog=dialog)
-
         # Set signals
         doc_type.currentIndexChanged.connect(partial(self._set_filter_table_man, widget))
         self.date_document_to.dateChanged.connect(partial(self._set_filter_table_man, widget))
@@ -3816,7 +3821,6 @@ class GwInfo(QObject):
         # Adding auto-completion to a QLineEdit
         self.table_object = "doc"
         tools_gw.set_completer_object(dialog, self.table_object)
-
         # Set filter expresion
         self._set_filter_table_man(widget)
 
@@ -3845,7 +3849,6 @@ class GwInfo(QObject):
         doc_type_value = tools_qt.get_combo_value(self.dlg_cf, self.dlg_cf.doc_type, 0)
         if doc_type_value != 'null' and doc_type_value is not None:
             expr += f" AND doc_type ILIKE '%{doc_type_value}%'"
-
         # Refresh model with selected filter
         widget.model().setFilter(expr)
         widget.model().select()

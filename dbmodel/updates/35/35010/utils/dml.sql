@@ -224,6 +224,20 @@ INSERT INTO config_form_tabs(formname, tabname, label, tooltip, sys_role, tabfun
 VALUES ('selector_basic', 'tab_macroexploitation', 'Macroexpl', 'Macroexploitation', 'role_epa', NULL, NULL, 4, 0)
 ON CONFLICT (formname, tabname, device) DO NOTHING;
 
+INSERT INTO config_form_tabs(
+	formname, tabname, label, tooltip, sys_role,  tabactions, device, orderby)
+	VALUES ('v_edit_node', 'tab_documents', 'Belge', 'Belge listesi', 'role_basic', $$[{"actionName":"actionEdit", "disabled":false},
+{"actionName":"actionZoom", "disabled":false},
+{"actionName":"actionCentered", "disabled":false},
+{"actionName":"actionZoomOut", "disabled":false},
+{"actionName":"actionCatalog", "disabled":false},
+{"actionName":"actionWorkcat", "disabled":false},
+{"actionName":"actionCopyPaste", "disabled":false},
+{"actionName":"actionSection", "disabled":false},
+{"actionName":"actionLink", "disabled":false},
+{"actionName":"actionHelp", "disabled":false}]$$,  4, 6)
+ON CONFLICT (formname, tabname, device) DO NOTHING;
+
 INSERT INTO config_param_system(parameter, value, descript, label, isenabled, layoutorder, project_type, datatype)
 VALUES ('basic_selector_tab_macroexploitation', '{"table":"macroexploitation", "selector":"selector_expl", 
 "table_id":"macroexpl_id",  "selector_id":"expl_id",  "label":"macroexpl_id, '' - '', m.name", 

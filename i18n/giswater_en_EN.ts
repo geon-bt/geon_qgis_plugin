@@ -2213,6 +2213,22 @@
 			<translation>Create DB project schema</translation>
 		</message>
 		<message>
+			<source>geon_open_project</source>
+			<translation>Open Geon Project</translation>
+		</message>
+		<message>
+			<source>No project found in your table</source>
+			<translation>No project found in your table</translation>
+		</message>
+		<message>
+			<source>Couldnt find your project table in schema</source>
+			<translation>Couldnt find your project table in schema</translation>
+		</message>
+		<message>
+			<source>something went horribly wrong</source>
+			<translation>something went horribly wrong</translation>
+		</message>
+		<message>
 			<source>tooltip_btn_schema_create</source>
 			<translation>None</translation>
 		</message>

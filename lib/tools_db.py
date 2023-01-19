@@ -11,6 +11,8 @@ from qgis.PyQt.QtCore import QSettings
 
 from .. import global_vars
 from . import tools_log, tools_qt, tools_qgis, tools_pgdao, tools_os
+import requests
+import json
 
 
 def create_list_for_completer(sql):
@@ -279,7 +281,6 @@ def connect_to_database(host, port, db, user, pwd, sslmode):
         global_vars.session_vars['last_error'] = tools_qt.tr(msg)
         tools_log.log_warning(str(global_vars.dao.last_error))
         return False
-
     return status
 
 
@@ -338,7 +339,7 @@ def get_postgis_version():
 
 def get_row(sql, log_info=True, log_sql=False, commit=True, params=None, aux_conn=None, is_admin=None):
     """ Execute SQL. Check its result in log tables, and show it to the user """
-
+    
     if global_vars.dao is None:
         tools_log.log_warning("The connection to the database is broken.", parameter=sql)
         return None
@@ -384,6 +385,8 @@ def get_rows(sql, log_info=True, log_sql=False, commit=True, params=None, add_em
 
 def execute_sql(sql, log_sql=False, log_error=False, commit=True, filepath=None, is_thread=False, show_exception=True):
     """ Execute SQL. Check its result in log tables, and show it to the user """
+    
+    
 
     if log_sql:
         tools_log.log_db(sql, stack_level_increase=1)

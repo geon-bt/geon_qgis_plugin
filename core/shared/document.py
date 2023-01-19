@@ -6,11 +6,15 @@ or (at your option) any later version.
 """
 # -*- coding: utf-8 -*-
 import os
+import re
+
 import webbrowser
 from functools import partial
+import requests
+import json
 
 from qgis.PyQt.QtWidgets import QAbstractItemView, QTableView, QFileDialog
-from qgis.PyQt.QtCore import pyqtSignal, QObject
+from qgis.PyQt.QtCore import pyqtSignal, QObject, QSettings
 
 from ..utils import tools_gw
 from ..ui.ui_manager import GwDocUi, GwDocManagerUi
@@ -36,7 +40,18 @@ class GwDocument(QObject):
         self.project_type = tools_gw.get_project_type()
         self.doc_tables = ["doc_x_node","doc_x_arc","doc_x_connec","doc_x_gully"]
 
-
+    def validate_url(self, text):
+        regex = re.compile(
+        r'^(?:http|ftp)s?://' # http:// or https://
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
+        r'localhost|' #localhost...
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
+        r'(?::\d+)?' # optional port
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+        if re.match(regex, text) is not None:
+            return False
+        else:
+            return True
 
     def get_document(self, tablename=None, qtable=None, item_id=None, feature=None, feature_type=None, row=None, list_tabs=None, doc_tables=None):
         """ Button 34: Add document """
@@ -123,7 +138,6 @@ class GwDocument(QObject):
         self.dlg_add_doc.rejected.connect(lambda: tools_gw.reset_rubberband(self.rubber_band))
         self.dlg_add_doc.rejected.connect(partial(tools_gw.restore_parent_layers_visibility, layers_visibility))
         self.dlg_add_doc.doc_type.currentIndexChanged.connect(self._activate_relations)
-        self.dlg_add_doc.btn_path_url.clicked.connect(partial(self._open_web_browser, self.dlg_add_doc, "path"))
         self.dlg_add_doc.btn_path_doc.clicked.connect(
             lambda: setattr(self, 'files_path', self._get_file_dialog(self.dlg_add_doc, "path")))
         self.dlg_add_doc.btn_accept.clicked.connect(
@@ -253,7 +267,41 @@ class GwDocument(QObject):
         date = tools_qt.get_calendar_date(self.dlg_add_doc, "date", datetime_format="yyyy/MM/dd")
         path = tools_qt.get_text(self.dlg_add_doc, "path", return_string_null=False)
         observ = tools_qt.get_text(self.dlg_add_doc, "observ", False, False)
+        self.geon_doc_id = 'This field will be randomly filled'
+        
 
+        if self.validate_url(path) is not False:
+            sql = (f"SELECT {self.schema_name}.geon_get_host('{self.schema_name}')")
+            row = tools_db.get_row(sql, log_info=False)
+            docker_host = row[0]
+            url = f"{docker_host}/geon/fileservice/uploader/plugin"
+            files = {'file': open(path, 'rb')}
+            response = requests.request("POST", url,  files=files)
+            try:
+                res = json.loads(response.text)
+                if(res['status'] == 'Failed'):            
+                    path = ''
+                    message = res['message']
+                    self.geon_doc_id = ''
+                    tools_qgis.show_warning(message, dialog=self.dlg_add_doc)
+                    return
+                else:
+                    res = json.loads(response.text)
+                    path = res['url']
+                    self.geon_doc_id = res['id']
+            except:
+                    res = json.loads(response.text)
+                    path = res['url']
+                    self.geon_doc_id = res['id']  
+            doc_id = self.geon_doc_id
+        else:
+            tools_qt.set_widget_text(self.dlg_add_doc, "path", '')
+            msg = ("You should upload a local file, not from url.")
+            tools_qt.show_info_box(msg, tools_qt.tr("Add document"))
+            path = None
+            self.geon_doc_id = 'This field will be randomly filled'
+            doc_id = self.geon_doc_id
+         
         if doc_type in (None, '', -1):
             message = "You need to insert doc_type"
             tools_qgis.show_warning(message, dialog=self.dlg_add_doc)
@@ -267,7 +315,11 @@ class GwDocument(QObject):
 
         # If document not exists perform an INSERT
         if row is None:
-            if len(self.files_path) <= 1:
+            if len(self.files_path) != 1:
+                # Ask question before executing
+                msg = ("You should select single file from file selector.")
+                tools_qt.show_info_box(msg, tools_qt.tr("Add document"))                
+            else:
                 if doc_id in (None, ''):
                     sql, doc_id = self._insert_doc_sql(doc_type, observ, date, path)
                 else:
@@ -275,16 +327,6 @@ class GwDocument(QObject):
                            f" VALUES ('{doc_id}', '{doc_type}', '{path}', '{observ}', '{date}');")
                 self._update_doc_tables(sql, doc_id, table_object, tablename, item_id, qtable)
                 self.doc_added.emit()
-            else:
-                # Ask question before executing
-                msg = ("You have selected multiple documents. In this case, doc_id will be a sequencial number for "
-                       "all selected documents and your doc_id won't be used.")
-                answer = tools_qt.show_question(msg, tools_qt.tr("Add document"))
-                if answer:
-                    for file in self.files_path:
-                        sql, doc_id = self._insert_doc_sql(doc_type, observ, date, file)
-                        self._update_doc_tables(sql, doc_id, table_object, tablename, item_id, qtable)
-                        self.doc_added.emit()
         # If document exists perform an UPDATE
         else:
             message = "Are you sure you want to update the data?"

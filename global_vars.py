@@ -51,6 +51,7 @@ project_vars['project_role'] = None     # gwProjectRole
 project_vars['project_type'] = None     # gwProjectType
 use_gw_snapping = True                  # Parameter from config_param_system, if false Giswater will not manage snapping configuration
 load_project_menu = None
+geon_token = ''
 # endregion
 
 

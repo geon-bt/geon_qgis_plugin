@@ -6,6 +6,42 @@ This version of Giswater is provided by Giswater Association
 
 --FUNCTION CODE: 2302
 
+DROP FUNCTION IF EXISTS SCHEMA_NAME.geon_get_host(project_name text);
+CREATE OR REPLACE FUNCTION SCHEMA_NAME.geon_get_host(
+	project_name text)
+    RETURNS text
+    LANGUAGE 'sql'
+    COST 100
+    IMMUTABLE PARALLEL UNSAFE
+AS $BODY$
+ SELECT docker_host FROM qwc_config.resource_maps WHERE name=project_name;
+$BODY$;
+
+DROP FUNCTION IF EXISTS SCHEMA_NAME.geon_get_token();
+CREATE OR REPLACE FUNCTION SCHEMA_NAME.geon_get_token()
+    RETURNS basic_auth.jwt_token
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE SECURITY DEFINER PARALLEL UNSAFE
+AS $BODY$
+DECLARE
+  _role name;
+  result basic_auth.jwt_token;
+BEGIN
+  -- check role
+  SELECT current_user INTO _role;
+  SELECT sign(
+      row_to_json(r), current_setting('public.jwt_secret')
+    ) AS token
+    FROM (
+      SELECT _role AS role,
+         extract(epoch FROM now())::INTEGER + 60*60 AS exp
+    ) r
+    INTO result;
+  RETURN result;
+END;
+$BODY$;
+
 DROP FUNCTION IF EXISTS SCHEMA_NAME.gw_fct_anl_node_topological_consistency(p_data json) ;
 CREATE OR REPLACE FUNCTION SCHEMA_NAME.gw_fct_anl_node_topological_consistency(p_data json) 
 RETURNS json AS 

@@ -50,7 +50,6 @@ class GwAdminButton:
 
     def __init__(self):
         """ Class to control toolbar 'om_ws' """
-
         # Initialize instance attributes
         self.iface = global_vars.iface
         self.settings = global_vars.giswater_settings
@@ -87,7 +86,7 @@ class GwAdminButton:
             'sslmode':'',
             'authcfg':''
             }   
-        self.geon_project_name = ''     
+        self.geon_project_name = ''   
         
 
 
@@ -267,6 +266,19 @@ class GwAdminButton:
 
     def geon_select_schema(self):
         """"""
+        
+        selected_con = self.cmb_connection.currentText()
+        s = QSettings()
+        s.beginGroup(f"PostgreSQL/connections/{selected_con}")
+        self.geon_dict['username'] =  s.value('username')
+        self.geon_dict['password'] =  s.value('password')
+        self.geon_dict['database'] =  s.value('database')
+        self.geon_dict['host'] = s.value('host')
+        self.geon_dict['port'] = s.value('port')
+        self.geon_dict['service'] = s.value('service')
+        self.geon_dict['sslmode'] = s.value("sslmode")
+        self.geon_dict['authcfg'] = s.value('authcfg')
+        
         self.dlg_readsql.geon_open_project.setEnabled(False)
         self.geon_projects = []
         rows = ['']
@@ -289,7 +301,15 @@ class GwAdminButton:
         else:   
             tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'Couldnt find your project table in schema')
             self.dlg_readsql.geon_open_project.setEnabled(False)  
-                
+            
+        """try:
+            sql = f"SELECT {self.geon_dict['schema']}.geon_get_token()"
+            global_vars.geon_token = tools_db.get_row(sql)
+            a = len(global_vars.geon_token[0])
+            print(global_vars.geon_token[0][1:a-1])                
+        except:
+            print('missing token function')"""
+            
         for row in rows:
             elem = [row, row]
             self.geon_projects.append(elem) 
@@ -299,11 +319,37 @@ class GwAdminButton:
         
     def geon_select_project(self):
         """"""
+        
+        selected_con = self.cmb_connection.currentText()
+        s = QSettings()
+        s.beginGroup(f"PostgreSQL/connections/{selected_con}")
+        self.geon_dict['username'] =  s.value('username')
+        self.geon_dict['password'] =  s.value('password')
+        self.geon_dict['database'] =  s.value('database')
+        self.geon_dict['host'] = s.value('host')
+        self.geon_dict['port'] = s.value('port')
+        self.geon_dict['service'] = s.value('service')
+        self.geon_dict['sslmode'] = s.value("sslmode")
+        self.geon_dict['authcfg'] = s.value('authcfg')
+        
         self.geon_projects = []
         self.geon_dict['project'] = tools_qt.get_text(self.dlg_readsql, 'geon_project_list')
         
     def geon_open_gis_project(self):
         """"""
+        
+        selected_con = self.cmb_connection.currentText()
+        s = QSettings()
+        s.beginGroup(f"PostgreSQL/connections/{selected_con}")
+        self.geon_dict['username'] =  s.value('username')
+        self.geon_dict['password'] =  s.value('password')
+        self.geon_dict['database'] =  s.value('database')
+        self.geon_dict['host'] = s.value('host')
+        self.geon_dict['port'] = s.value('port')
+        self.geon_dict['service'] = s.value('service')
+        self.geon_dict['sslmode'] = s.value("sslmode")
+        self.geon_dict['authcfg'] = s.value('authcfg')
+        
         username = self.geon_dict['username']
         password = self.geon_dict['password']
         host = self.geon_dict['host']
@@ -886,7 +932,6 @@ class GwAdminButton:
         """ Set signals. Function has to be executed only once (during form initialization) """
 
         self.dlg_readsql.btn_close.clicked.connect(partial(self._close_dialog_admin, self.dlg_readsql))
-        self.dlg_readsql.geon_open_project.clicked.connect(partial(self.geon_open_gis_project))
         self.dlg_readsql.btn_schema_create.clicked.connect(partial(self._open_create_project))
         self.dlg_readsql.btn_custom_load_file.clicked.connect(
             partial(self._load_custom_sql_files, self.dlg_readsql, "custom_path_folder"))
@@ -894,19 +939,23 @@ class GwAdminButton:
         self.dlg_readsql.btn_schema_file_to_db.clicked.connect(partial(self._schema_file_to_db))
         self.dlg_readsql.btn_info.clicked.connect(partial(self._open_update_info))
         self.dlg_readsql.project_schema_name.currentIndexChanged.connect(partial(self._set_info_project))
-        self.dlg_readsql.project_schema_name.currentIndexChanged.connect(partial(self.geon_select_schema))
-        self.dlg_readsql.geon_project_list.currentIndexChanged.connect(partial(self.geon_select_project))
         self.dlg_readsql.project_schema_name.currentIndexChanged.connect(partial(self._update_manage_ui))
         self.cmb_project_type.currentIndexChanged.connect(partial(self._populate_data_schema_name, self.cmb_project_type))
         self.cmb_project_type.currentIndexChanged.connect(partial(self._change_project_type, self.cmb_project_type))
-        self.cmb_project_type.currentIndexChanged.connect(partial(self.geon_clear))
         self.cmb_project_type.currentIndexChanged.connect(partial(self._set_info_project))
         self.cmb_project_type.currentIndexChanged.connect(partial(self._update_manage_ui))
         self.dlg_readsql.btn_custom_select_file.clicked.connect(
             partial(tools_qt.get_folder_path, self.dlg_readsql, "custom_path_folder"))
         self.cmb_connection.currentIndexChanged.connect(partial(self._event_change_connection))
         self.cmb_connection.currentIndexChanged.connect(partial(self._set_info_project))
+        
         self.cmb_connection.currentIndexChanged.connect(partial(self.geon_select_connection))
+        self.dlg_readsql.geon_open_project.clicked.connect(partial(self.geon_open_gis_project))
+        self.dlg_readsql.geon_project_list.currentIndexChanged.connect(partial(self.geon_select_project))
+        self.cmb_project_type.currentIndexChanged.connect(partial(self.geon_clear))
+        self.dlg_readsql.project_schema_name.currentIndexChanged.connect(partial(self.geon_select_schema))
+        self.cmb_connection.currentIndexChanged.connect(partial(self.geon_select_schema))
+        self.cmb_project_type.currentIndexChanged.connect(partial(self.geon_select_schema))
         
         self.dlg_readsql.btn_schema_rename.clicked.connect(partial(self._open_rename))
         self.dlg_readsql.btn_delete.clicked.connect(partial(self._delete_schema))
@@ -1658,7 +1707,19 @@ class GwAdminButton:
 
     def _populate_data_schema_name(self, widget):
         """"""
-
+        """
+        settings = QSettings()
+        settings.beginGroup("PostgreSQL/connections")        
+        default_connection = settings.value('selected')
+        settings.endGroup()
+        
+        settings.beginGroup(f"PostgreSQL/connections/{default_connection}")
+        geon_sql = f"SELECT current_user"
+        result = global_vars.dao.get_row(geon_sql)
+        global_vars.geon_token = result[0].replace('(','').replace(')','') 
+        print(global_vars.geon_token)
+        """
+        
         # Get filter
         filter_ = tools_qt.get_text(self.dlg_readsql, widget)
         if filter_ in (None, 'null') and self.schema_type:
