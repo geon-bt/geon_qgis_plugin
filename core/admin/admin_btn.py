@@ -262,6 +262,9 @@ class GwAdminButton:
         self.geon_dict['service'] = s.value('service')
         self.geon_dict['sslmode'] = s.value("sslmode")
         self.geon_dict['authcfg'] = s.value('authcfg')
+        if not self.geon_dict['host']:
+            self.dlg_readsql.geon_open_project.setEnabled(False)
+            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No host saved in connection')
 
 
     def geon_select_schema(self):
@@ -278,43 +281,46 @@ class GwAdminButton:
         self.geon_dict['service'] = s.value('service')
         self.geon_dict['sslmode'] = s.value("sslmode")
         self.geon_dict['authcfg'] = s.value('authcfg')
-        
-        self.dlg_readsql.geon_open_project.setEnabled(False)
-        self.geon_projects = []
-        rows = ['']
-        tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
-        self.geon_dict['schema'] = tools_qt.get_text(self.dlg_readsql, 'project_schema_name')
-        sql = (f"SELECT EXISTS (SELECT * FROM information_schema.tables "
-                   f"WHERE table_schema = '{self.geon_dict['schema']}' "
-                   f"AND table_name = 'qgis_projects')")
-        exists = tools_db.get_row(sql)
-        if exists and str(exists[0]) == 'True':
-            sql = f"SELECT name FROM {self.geon_dict['schema']}.qgis_projects"
-            result = tools_db.get_row(sql)
-            if result is not None:
-                rows = result 
-                self.dlg_readsql.geon_open_project.setEnabled(True)  
-                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
-            else:
-                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No project found in your table') 
+        if not self.geon_dict['host']:
+            self.dlg_readsql.geon_open_project.setEnabled(False)
+            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No host saved in connection')
+        else:
+            self.dlg_readsql.geon_open_project.setEnabled(False)
+            self.geon_projects = []
+            rows = ['']
+            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
+            self.geon_dict['schema'] = tools_qt.get_text(self.dlg_readsql, 'project_schema_name')
+            sql = (f"SELECT EXISTS (SELECT * FROM information_schema.tables "
+                    f"WHERE table_schema = '{self.geon_dict['schema']}' "
+                    f"AND table_name = 'qgis_projects')")
+            exists = tools_db.get_row(sql)
+            if exists and str(exists[0]) == 'True':
+                sql = f"SELECT name FROM {self.geon_dict['schema']}.qgis_projects"
+                result = tools_db.get_row(sql)
+                if result is not None:
+                    rows = result 
+                    self.dlg_readsql.geon_open_project.setEnabled(True)  
+                    tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
+                else:
+                    tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No project found in your table') 
+                    self.dlg_readsql.geon_open_project.setEnabled(False)  
+            else:   
+                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'Couldnt find your project table in schema')
                 self.dlg_readsql.geon_open_project.setEnabled(False)  
-        else:   
-            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'Couldnt find your project table in schema')
-            self.dlg_readsql.geon_open_project.setEnabled(False)  
-            
-        """try:
-            sql = f"SELECT {self.geon_dict['schema']}.geon_get_token()"
-            global_vars.geon_token = tools_db.get_row(sql)
-            a = len(global_vars.geon_token[0])
-            print(global_vars.geon_token[0][1:a-1])                
-        except:
-            print('missing token function')"""
-            
-        for row in rows:
-            elem = [row, row]
-            self.geon_projects.append(elem) 
-        tools_qt.fill_combo_values(self.dlg_readsql.geon_project_list, self.geon_projects, 1)
-        self.geon_dict['project'] = tools_qt.get_text(self.dlg_readsql, 'geon_project_list')
+                
+            """try:
+                sql = f"SELECT {self.geon_dict['schema']}.geon_get_token()"
+                global_vars.geon_token = tools_db.get_row(sql)
+                a = len(global_vars.geon_token[0])
+                print(global_vars.geon_token[0][1:a-1])                
+            except:
+                print('missing token function')"""
+                
+            for row in rows:
+                elem = [row, row]
+                self.geon_projects.append(elem) 
+            tools_qt.fill_combo_values(self.dlg_readsql.geon_project_list, self.geon_projects, 1)
+            self.geon_dict['project'] = tools_qt.get_text(self.dlg_readsql, 'geon_project_list')
         
         
     def geon_select_project(self):
@@ -331,9 +337,12 @@ class GwAdminButton:
         self.geon_dict['service'] = s.value('service')
         self.geon_dict['sslmode'] = s.value("sslmode")
         self.geon_dict['authcfg'] = s.value('authcfg')
-        
-        self.geon_projects = []
-        self.geon_dict['project'] = tools_qt.get_text(self.dlg_readsql, 'geon_project_list')
+        if not self.geon_dict['host']:
+            self.dlg_readsql.geon_open_project.setEnabled(False)
+            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No host saved in connection')
+        else:        
+            self.geon_projects = []
+            self.geon_dict['project'] = tools_qt.get_text(self.dlg_readsql, 'geon_project_list')
         
     def geon_open_gis_project(self):
         """"""
@@ -349,24 +358,27 @@ class GwAdminButton:
         self.geon_dict['service'] = s.value('service')
         self.geon_dict['sslmode'] = s.value("sslmode")
         self.geon_dict['authcfg'] = s.value('authcfg')
-        
-        username = self.geon_dict['username']
-        password = self.geon_dict['password']
-        host = self.geon_dict['host']
-        port = self.geon_dict['port']
-        sslmode = self.geon_dict['sslmode']
-        database = self.geon_dict['database']
-        schema = self.geon_dict['schema']
-        project = self.geon_dict['project']
-        uri = f'postgresql://{username}:{password}@{host}:{port}?sslmode={sslmode}&dbname={database}&schema={schema}&project={project}'
-        try:         
-            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
-            project = QgsProject.instance()
-            project.read(uri)
-            file_name = os.path.basename(self.plugin_dir)
-            reloadPlugin(f"{file_name}")
-        except:
-            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'something went horribly wrong')
+        if not self.geon_dict['host']:
+            self.dlg_readsql.geon_open_project.setEnabled(False)
+            tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'No host saved in connection')
+        else:        
+            username = self.geon_dict['username']
+            password = self.geon_dict['password']
+            host = self.geon_dict['host']
+            port = self.geon_dict['port']
+            sslmode = self.geon_dict['sslmode']
+            database = self.geon_dict['database']
+            schema = self.geon_dict['schema']
+            project = self.geon_dict['project']
+            uri = f'postgresql://{username}:{password}@{host}:{port}?sslmode={sslmode}&dbname={database}&schema={schema}&project={project}'
+            try:         
+                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', '')
+                project = QgsProject.instance()
+                project.read(uri)
+                file_name = os.path.basename(self.plugin_dir)
+                reloadPlugin(f"{file_name}")
+            except:
+                tools_qt.set_widget_text(self.dlg_readsql, 'lbl_geon_status', 'something went horribly wrong')
 
 
     #endregion
