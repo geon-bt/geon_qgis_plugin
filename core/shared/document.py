@@ -276,7 +276,7 @@ class GwDocument(QObject):
             docker_host = row[0]
             url = f"{docker_host}/geon/fileservice/uploader/plugin"
             files = {'file': open(path, 'rb')}
-            response = requests.request("POST", url,  files=files)
+            response = requests.request("POST", url,  files=files, verify=False)
             try:
                 res = json.loads(response.text)
                 if(res['status'] == 'Failed'):            

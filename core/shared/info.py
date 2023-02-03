@@ -8,14 +8,17 @@ or (at your option) any later version.
 import json
 import os
 import re
-import urllib.parse as parse
 import webbrowser
+import urllib
+from functools import partial
+
+    
 from functools import partial
 
 from sip import isdeleted
 
 from qgis.PyQt.QtCore import pyqtSignal, QDate, QObject, QRegExp, QStringListModel, Qt, QSettings
-from qgis.PyQt.QtGui import QColor, QRegExpValidator, QStandardItem, QStandardItemModel
+from qgis.PyQt.QtGui import QColor, QRegExpValidator, QStandardItem, QStandardItemModel, QPixmap, QIcon
 from qgis.PyQt.QtSql import QSqlTableModel
 from qgis.PyQt.QtWidgets import QAction, QAbstractItemView, QCheckBox, QComboBox, QCompleter, QDoubleSpinBox, \
     QDateEdit, QGridLayout, QLabel, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QSizePolicy, \
@@ -36,7 +39,8 @@ from ..ui.ui_manager import GwInfoGenericUi, GwInfoFeatureUi, GwVisitEventFullUi
     GwInterpolate
 from ... import global_vars
 from ...lib import tools_qgis, tools_qt, tools_log, tools_db, tools_os
-from ...lib.tools_qt import GwHyperLinkLineEdit
+from ...lib.tools_qt import GwHyperLinkLineEdit, GwExtendedQLabel
+
 
 global is_inserting
 is_inserting = False
@@ -114,7 +118,6 @@ class GwInfo(QObject):
             # So to clear the dictionary do this:
             #     self.my_json.clear()
             self.tab_type = tab_type
-
             # Get project variables
             qgis_project_add_schema = global_vars.project_vars['add_schema']
             qgis_project_main_schema = global_vars.project_vars['main_schema']
@@ -187,7 +190,8 @@ class GwInfo(QObject):
             tools_qgis.restore_cursor()
             if json_result in (None, False):
                 return False, None
-
+            
+            
             # Manage status failed
             if json_result['status'] == 'Failed' or ('results' in json_result and json_result['results'] <= 0):
                 level = 1
@@ -246,6 +250,7 @@ class GwInfo(QObject):
             else:
                 tools_log.log_warning(f"template not managed: {template}")
                 return False, None
+            
         except Exception as e:
             tools_qgis.show_warning("Exception in info", parameter=e)
             self._disconnect_signals()  # Disconnect signals
@@ -799,8 +804,11 @@ class GwInfo(QObject):
         try:
             # Set toolbox labels
             toolbox_cf = self.dlg_cf.findChild(QWidget, 'toolBox')
+            
             toolbox_cf.setItemText(0, complet_result['body']['form']['tabDataLytNames']['index_0'])
             toolbox_cf.setItemText(1, complet_result['body']['form']['tabDataLytNames']['index_1'])
+            
+            
         except Exception:
             pass
         finally:
@@ -3793,6 +3801,7 @@ class GwInfo(QObject):
         btn_doc_delete = self.dlg_cf.findChild(QPushButton, "btn_doc_delete")
         btn_doc_insert = self.dlg_cf.findChild(QPushButton, "btn_doc_insert")
         btn_doc_new = self.dlg_cf.findChild(QPushButton, "btn_doc_new")
+        self.label_image = self.dlg_cf.findChild(QLabel, "label_image")
 
         # Set max and min dates
         tools_gw.set_dates_from_to(self.date_document_from, self.date_document_to, table_name, 'date', 'date')
@@ -3806,6 +3815,7 @@ class GwInfo(QObject):
         self.date_document_to.dateChanged.connect(partial(self._set_filter_table_man, widget))
         self.date_document_from.dateChanged.connect(partial(self._set_filter_table_man, widget))
         self.tbl_document.doubleClicked.connect(partial(self._open_selected_document, widget))
+        self.tbl_document.clicked.connect(partial(self._get_selected_image, widget))
         btn_open_doc.clicked.connect(partial(self._open_selected_document, widget))
         btn_doc_delete.clicked.connect(partial(self._delete_records, widget, table_name))
         btn_doc_insert.clicked.connect(partial(self._add_object, widget, "doc", "v_ui_doc"))
@@ -3856,6 +3866,9 @@ class GwInfo(QObject):
 
     def _open_selected_document(self, widget):
         """ Open selected document of the @widget """
+        sql = (f"SELECT {self.schema_name}.geon_get_host('{self.schema_name}')")
+        row = tools_db.get_row(sql, log_info=False)
+        docker_host = row[0]
 
         # Get selected rows
         selected_list = widget.selectionModel().selectedRows()
@@ -3870,11 +3883,43 @@ class GwInfo(QObject):
 
         # Get document path (can be relative or absolute)
         row = selected_list[0].row()
-        path = widget.model().record(row).value("path")
+        tmp_path = widget.model().record(row).value("path")
+        path = f'{docker_host}/geon/fileservice/get/{tmp_path}'
         status, message = tools_os.open_file(path)
         if status is False and message is not None:
             tools_qgis.show_warning(message, parameter=path, dialog=self.dlg_cf)
 
+
+    def _get_selected_image(self, widget):
+        """ Open selected image on a frame"""
+        sql = (f"SELECT {self.schema_name}.geon_get_host('{self.schema_name}')")
+        row = tools_db.get_row(sql, log_info=False)
+        docker_host = row[0]
+
+        # Get selected rows
+        selected_list = widget.selectionModel().selectedRows()
+        if len(selected_list) == 0:
+            message = "Any record selected"
+            tools_qgis.show_warning(message, dialog=self.dlg_cf)
+            return
+        elif len(selected_list) > 1:
+            message = "Select just one document"
+            tools_qgis.show_warning(message, dialog=self.dlg_cf)
+            return
+
+        # Get document path (can be relative or absolute)
+        row = selected_list[0].row()
+        tmp_path = (widget.model().record(row).value("path")).replace(' ', '%20')
+        path = f'{docker_host}/geon/fileservice/get/{tmp_path}'
+        with urllib.request.urlopen(path) as url:
+            data = url.read()
+            pixmap = QPixmap()
+            pixmap.loadFromData(data)
+            pixmap = pixmap.scaled(300, 300, Qt.IgnoreAspectRatio, Qt.SmoothTransformation)
+            widget_extended = self.label_image
+            widget_extended.setPixmap(pixmap)
+
+            
 
     def _manage_new_document(self, dialog, doc_id=None, feature=None):
         """ Execute action of button 34 """

@@ -264,13 +264,14 @@ class GwLoadProject(QObject):
     def _check_project_type(self):
         """ Check if loaded project is valid for Giswater """
         # Check if table 'v_edit_node' is loaded
-        if global_vars.project_type not in ('ws', 'ud'):
+        if global_vars.project_type not in ('ws', 'ud', "el"):
             return False
 
         addparam = tools_gw.get_sysversion_addparam()
         if addparam:
             add_type = addparam.get("type")
-            if add_type and add_type.lower() not in ("ws", "ud"):
+            # GEON TOUCH
+            if add_type and add_type.lower() not in ("ws", "ud", "el"):
                 global_vars.project_loaded = True
                 return False
 
@@ -539,7 +540,7 @@ class GwLoadProject(QObject):
         if len(layers) == 0:
             return False
 
-        if global_vars.project_type in ('ws', 'ud'):
+        if global_vars.project_type in ('ws', 'ud', 'el'):
             QApplication.setOverrideCursor(Qt.ArrowCursor)
             self.check_project = GwProjectCheckTask()
 

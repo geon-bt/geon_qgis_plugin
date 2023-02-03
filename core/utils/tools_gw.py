@@ -1916,6 +1916,7 @@ def execute_procedure(function_name, parameters=None, schema_name=None, commit=T
         row = tools_db.check_function(function_name, schema_name, commit, aux_conn=aux_conn)
         if row in (None, ''):
             tools_qgis.show_warning("Function not found in database", parameter=function_name)
+            print(f"patlak: {function_name}")
             return None
 
     # Manage schema_name and parameters

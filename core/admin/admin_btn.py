@@ -1122,11 +1122,9 @@ class GwAdminButton:
 
         # Load last schema name selected and project type
         tools_qt.set_widget_text(self.dlg_readsql, self.dlg_readsql.cmb_project_type,
-                                 tools_gw.get_config_parser('btn_admin', 'project_type', "user", "session", False,
-                                                            force_reload=True))
+        tools_gw.get_config_parser('btn_admin', 'project_type', "user", "session", False, force_reload=True))
         tools_qt.set_widget_text(self.dlg_readsql, self.dlg_readsql.project_schema_name,
-                                 tools_gw.get_config_parser('btn_admin', 'schema_name', "user", "session", False,
-                                                            force_reload=True))
+        tools_gw.get_config_parser('btn_admin', 'schema_name', "user", "session", False, force_reload=True))
 
         # Set custom sql path
         folder_path = tools_gw.get_config_parser("btn_admin", "custom_sql_path", "user", "session", force_reload=True)
