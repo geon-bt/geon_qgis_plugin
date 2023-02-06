@@ -22,7 +22,7 @@
     <customproperties>
       <Option/>
     </customproperties>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="OM">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="BAKIM">
       <customproperties>
         <Option/>
       </customproperties>
@@ -52,75 +52,75 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="INVENTORY">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="ENVANTER">
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-group expanded="0" checked="Qt::Checked" name="Catalogs">
+      <layer-tree-group expanded="0" checked="Qt::Checked" name="Kataloglar">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_node&quot;" expanded="1" id="v_edit_cat_feature_node_896f1d54_369f_445d_8297_634294e52f3f" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Feature node catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_node&quot;" expanded="1" id="v_edit_cat_feature_node_896f1d54_369f_445d_8297_634294e52f3f" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Nokta obje kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_arc&quot;" expanded="1" id="v_edit_cat_feature_arc_4cd4d71c_df9e_44bf_8911_d4932f930ad2" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Feature arc catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_arc&quot;" expanded="1" id="v_edit_cat_feature_arc_4cd4d71c_df9e_44bf_8911_d4932f930ad2" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Hat obje kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_connec&quot;" expanded="1" id="v_edit_cat_feature_connec_507c5448_7822_4bd9_ab7e_24d7b1f11400" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Feature connec catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_connec&quot;" expanded="1" id="v_edit_cat_feature_connec_507c5448_7822_4bd9_ab7e_24d7b1f11400" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="ABN obje kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_gully&quot;" expanded="1" id="v_edit_cat_feature_gully_8979adc2_9078_461e_a337_347fb0723b32" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Feature gully catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_cat_feature_gully&quot;" expanded="1" id="v_edit_cat_feature_gully_8979adc2_9078_461e_a337_347fb0723b32" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Izgara obje kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_mat_node&quot;" expanded="1" id="cat_mat_node_78cd77ff_0c52_4719_a447_c588e95b21a3" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Node material catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_mat_node&quot;" expanded="1" id="cat_mat_node_78cd77ff_0c52_4719_a447_c588e95b21a3" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Nokta malzeme kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_mat_arc&quot;" expanded="1" id="cat_mat_arc_bba8ab41_f652_4864_95d3_45c7e39b5175" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Arc material catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_mat_arc&quot;" expanded="1" id="cat_mat_arc_bba8ab41_f652_4864_95d3_45c7e39b5175" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Hat malzeme kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_mat_grate&quot;" expanded="1" id="cat_mat_grate_3021f691_143d_43b1_b6a3_c4c83c58791b" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Grate material catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_mat_grate&quot;" expanded="1" id="cat_mat_grate_3021f691_143d_43b1_b6a3_c4c83c58791b" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Izgara malzeme kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_node&quot;" expanded="1" id="cat_node_612b7617_0e3d_43f8_bffe_e49e3afa89f5" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Node catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_node&quot;" expanded="1" id="cat_node_612b7617_0e3d_43f8_bffe_e49e3afa89f5" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Nokta kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_arc&quot;" expanded="1" id="cat_arc_52f24e12_c228_47c2_b347_69b187f2d984" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Arc catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_arc&quot;" expanded="1" id="cat_arc_52f24e12_c228_47c2_b347_69b187f2d984" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Hat kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_connec&quot;" expanded="1" id="cat_connec_c478157f_493b_462e_addb_2de2fbf4f4da" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Connec catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_connec&quot;" expanded="1" id="cat_connec_c478157f_493b_462e_addb_2de2fbf4f4da" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="ABN kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_grate&quot;" expanded="1" id="cat_grate_c32f087c_3368_4aa6_966e_1ff0e19c5894" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Grate catalog">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;cat_grate&quot;" expanded="1" id="cat_grate_c32f087c_3368_4aa6_966e_1ff0e19c5894" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Izgara kataloğu">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::Checked" name="Map zones">
+      <layer-tree-group expanded="0" checked="Qt::Checked" name="Harita Bölgeleri">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='expl_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_exploitation&quot; (the_geom)" expanded="1" id="v_edit_exploitation_79f9ccda_070f_4e89_b991_6f956aec4b36" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Exploitation">
+        <layer-tree-layer source=" __DATASOURCE__ key='expl_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_exploitation&quot; (the_geom)" expanded="1" id="v_edit_exploitation_79f9ccda_070f_4e89_b991_6f956aec4b36" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="İşletme">
           <customproperties>
             <Option/>
           </customproperties>
@@ -130,74 +130,74 @@
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='sector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_sector&quot; (the_geom)" expanded="1" id="v_edit_sector_d4924986_50a2_4c42_bad8_bfff1644805d" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Sector">
+        <layer-tree-layer source=" __DATASOURCE__ key='sector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_sector&quot; (the_geom)" expanded="1" id="v_edit_sector_d4924986_50a2_4c42_bad8_bfff1644805d" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Sektör">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::Checked" name="Network">
+      <layer-tree-group expanded="1" checked="Qt::Checked" name="Şebeke">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='node_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_node&quot; (the_geom)" expanded="0" id="v_edit_node_505585a2_32e2_4c2e_a451_d9becc988d7c" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Node">
+        <layer-tree-layer source=" __DATASOURCE__ key='node_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_node&quot; (the_geom)" expanded="0" id="v_edit_node_505585a2_32e2_4c2e_a451_d9becc988d7c" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Nokta">
           <customproperties>
             <Option type="Map">
               <Option value="0" type="QString" name="showFeatureCount"/>
             </Option>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='connec_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_connec&quot; (the_geom)" expanded="1" id="v_edit_connec_8a7cc13f_d89f_485c_baa6_dea1fcfe3331" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Connec">
+        <layer-tree-layer source=" __DATASOURCE__ key='connec_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_connec&quot; (the_geom)" expanded="1" id="v_edit_connec_8a7cc13f_d89f_485c_baa6_dea1fcfe3331" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="ABN">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='gully_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_gully&quot; (the_geom)" expanded="1" id="v_edit_gully_2fae9786_ee66_45f2_9da6_d665653031fb" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Gully">
+        <layer-tree-layer source=" __DATASOURCE__ key='gully_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_gully&quot; (the_geom)" expanded="1" id="v_edit_gully_2fae9786_ee66_45f2_9da6_d665653031fb" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Izgara">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='arc_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_arc&quot; (the_geom)" expanded="0" id="v_edit_arc_20c2fc8b_1eba_4b5b_99c3_1f6836ca8281" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Arc">
+        <layer-tree-layer source=" __DATASOURCE__ key='arc_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_arc&quot; (the_geom)" expanded="0" id="v_edit_arc_20c2fc8b_1eba_4b5b_99c3_1f6836ca8281" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Hat">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='link_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_link&quot; (the_geom)" expanded="1" id="v_edit_link_0c252985_de4f_4df3_a76a_c279ffeffed8" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Link">
+        <layer-tree-layer source=" __DATASOURCE__ key='link_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_link&quot; (the_geom)" expanded="1" id="v_edit_link_0c252985_de4f_4df3_a76a_c279ffeffed8" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Abone servis hattı">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-group expanded="0" checked="Qt::Checked" name="Polygon">
+        <layer-tree-group expanded="0" checked="Qt::Checked" name="Poligon">
           <customproperties>
             <Option/>
           </customproperties>
-          <layer-tree-layer source=" __DATASOURCE__ key='pol_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;ve_pol_node&quot; (the_geom)" expanded="0" id="ve_pol_node_5b084ed1_2aea_4af8_8ca6_dbc250e7013e" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Node polygon">
+          <layer-tree-layer source=" __DATASOURCE__ key='pol_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;ve_pol_node&quot; (the_geom)" expanded="0" id="ve_pol_node_5b084ed1_2aea_4af8_8ca6_dbc250e7013e" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Nokta poligonu">
             <customproperties>
               <Option/>
             </customproperties>
           </layer-tree-layer>
-          <layer-tree-layer source=" __DATASOURCE__ key='pol_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;ve_pol_gully&quot; (the_geom)" expanded="1" id="ve_pol_gully_62d6bf96_9fb7_4951_81d1_feb290799438" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Gully polygon">
+          <layer-tree-layer source=" __DATASOURCE__ key='pol_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;ve_pol_gully&quot; (the_geom)" expanded="1" id="ve_pol_gully_62d6bf96_9fb7_4951_81d1_feb290799438" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Izgara poligonu">
             <customproperties>
               <Option/>
             </customproperties>
           </layer-tree-layer>
-          <layer-tree-layer source=" __DATASOURCE__ key='pol_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;ve_pol_connec&quot; (the_geom)" expanded="1" id="ve_pol_connec_89eb130b_0cb0_405a_a2b2_9133116f7c8e" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Connec polygon">
+          <layer-tree-layer source=" __DATASOURCE__ key='pol_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;ve_pol_connec&quot; (the_geom)" expanded="1" id="ve_pol_connec_89eb130b_0cb0_405a_a2b2_9133116f7c8e" patch_size="-1,-1" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="ABN poligonu">
             <customproperties>
               <Option/>
             </customproperties>
           </layer-tree-layer>
         </layer-tree-group>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Other">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Diğer">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_dimensions&quot; (the_geom)" expanded="0" id="v_edit_dimensions_f966f7af_448b_41d3_9ac5_c8adf0f785ea" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Dimensioning">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_dimensions&quot; (the_geom)" expanded="0" id="v_edit_dimensions_f966f7af_448b_41d3_9ac5_c8adf0f785ea" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Boyutlandırma">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='element_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_element&quot; (the_geom)" expanded="1" id="v_edit_element_e5ea3ac0_d64b_4db9_ba41_01b6ba993917" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Element">
+        <layer-tree-layer source=" __DATASOURCE__ key='element_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_element&quot; (the_geom)" expanded="1" id="v_edit_element_e5ea3ac0_d64b_4db9_ba41_01b6ba993917" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Bileşen">
           <customproperties>
             <Option/>
           </customproperties>
@@ -208,7 +208,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Catalogs">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Kataloglar">
         <customproperties>
           <Option/>
         </customproperties>
@@ -439,90 +439,90 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="MASTERPLAN">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="PLANLAMA">
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Psector">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Planlanan sektör">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='psector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_plan_psector&quot; (the_geom)" expanded="1" id="v_edit_plan_psector_4db99134_b512_43f3_8a52_b31af809fd0d" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plan psector">
+        <layer-tree-layer source=" __DATASOURCE__ key='psector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_edit_plan_psector&quot; (the_geom)" expanded="1" id="v_edit_plan_psector_4db99134_b512_43f3_8a52_b31af809fd0d" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Planlanan sektörler">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='psector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_current_psector&quot; (the_geom)" expanded="1" id="v_plan_current_psector_06064010_ae7f_4025_bcf4_3005e9b0dae9" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Current psector">
+        <layer-tree-layer source=" __DATASOURCE__ key='psector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_current_psector&quot; (the_geom)" expanded="1" id="v_plan_current_psector_06064010_ae7f_4025_bcf4_3005e9b0dae9" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Geçerli sektör">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='connec_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_connec&quot; (the_geom)" expanded="0" id="v_plan_psector_connec_05b879ed_0c68_4455_a577_9794d2572e52" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plan psector connec">
+        <layer-tree-layer source=" __DATASOURCE__ key='connec_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_connec&quot; (the_geom)" expanded="0" id="v_plan_psector_connec_05b879ed_0c68_4455_a577_9794d2572e52" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Planlanan ABN">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='gully_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_gully&quot; (the_geom)" expanded="0" id="v_plan_psector_gully_9b33e53f_f0da_4b5f_92d2_88291ca34736" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plan psector gully">
+        <layer-tree-layer source=" __DATASOURCE__ key='gully_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_gully&quot; (the_geom)" expanded="0" id="v_plan_psector_gully_9b33e53f_f0da_4b5f_92d2_88291ca34736" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Planlanan ızgara">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='node_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_node&quot; (the_geom)" expanded="0" id="v_plan_psector_node_2bc08b43_8656_4945_806f_d9098b70c8a2" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plan psector node">
+        <layer-tree-layer source=" __DATASOURCE__ key='node_id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_node&quot; (the_geom)" expanded="0" id="v_plan_psector_node_2bc08b43_8656_4945_806f_d9098b70c8a2" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Planlanan nokta">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='arc_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_arc&quot; (the_geom)" expanded="0" id="v_plan_psector_arc_e6a59222_3da7_4c3e_a715_d992bf82c7e1" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plan psector arc">
+        <layer-tree-layer source=" __DATASOURCE__ key='arc_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_arc&quot; (the_geom)" expanded="0" id="v_plan_psector_arc_e6a59222_3da7_4c3e_a715_d992bf82c7e1" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Planlanan hat">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='link_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_link&quot; (the_geom)" expanded="0" id="v_plan_psector_link_736ee21c_0eef_4094_aada_ab52509e641a" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plan psector link">
+        <layer-tree-layer source=" __DATASOURCE__ key='link_id' srid=__SRID__ type=LineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_psector_link&quot; (the_geom)" expanded="0" id="v_plan_psector_link_736ee21c_0eef_4094_aada_ab52509e641a" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Planlanan abone servis hattı">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::Checked" name="Prices">
+      <layer-tree-group expanded="0" checked="Qt::Checked" name="Fiyatlar">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;plan_price&quot;" expanded="1" id="plan_price_9e588368_c73a_413c_9565_da06d40e509b" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Price">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;plan_price&quot;" expanded="1" id="plan_price_9e588368_c73a_413c_9565_da06d40e509b" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Fiyat">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;plan_price_compost&quot;" expanded="1" id="plan_price_compost_ad0d2671_8427_4de0_adce_51edc8a29220" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Compost price">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;plan_price_compost&quot;" expanded="1" id="plan_price_compost_ad0d2671_8427_4de0_adce_51edc8a29220" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Karma fiyatlar">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="BASEMAP">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="ALTLIKLAR">
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-group expanded="1" checked="Qt::Checked" name="Address">
+      <layer-tree-group expanded="1" checked="Qt::Checked" name="Adres">
         <customproperties>
           <Option/>
         </customproperties>
-        <layer-tree-layer source=" __DATASOURCE__ key='muni_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;ext_municipality&quot; (the_geom)" expanded="1" id="ext_municipality_7901e95f_4c75_42cb_b520_f89bb2e71ff9" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Municipality">
+        <layer-tree-layer source=" __DATASOURCE__ key='muni_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='0' table=&quot;SCHEMA_NAME&quot;.&quot;ext_municipality&quot; (the_geom)" expanded="1" id="ext_municipality_7901e95f_4c75_42cb_b520_f89bb2e71ff9" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="İlçe">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_ext_address&quot; (the_geom)" expanded="1" id="v_ext_address_50461371_f0e5_46c9_81f8_4c182b00a9e9" patch_size="0,0" checked="Qt::Unchecked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Address">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=Point checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_ext_address&quot; (the_geom)" expanded="1" id="v_ext_address_50461371_f0e5_46c9_81f8_4c182b00a9e9" patch_size="0,0" checked="Qt::Unchecked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Adres">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_ext_streetaxis&quot; (the_geom)" expanded="1" id="v_ext_streetaxis_8e9c4012_5761_44d2_b410_878464ca38b4" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Streetaxis">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_ext_streetaxis&quot; (the_geom)" expanded="1" id="v_ext_streetaxis_8e9c4012_5761_44d2_b410_878464ca38b4" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Yolortahat">
           <customproperties>
             <Option/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_ext_plot&quot; (the_geom)" expanded="1" id="v_ext_plot_16824253_6498_4e46_a047_38297ad658c7" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Plot">
+        <layer-tree-layer source=" __DATASOURCE__ key='id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_ext_plot&quot; (the_geom)" expanded="1" id="v_ext_plot_16824253_6498_4e46_a047_38297ad658c7" patch_size="0,0" checked="Qt::Checked" providerKey="postgres" legend_exp="" legend_split_behavior="0" name="Yapı">
           <customproperties>
             <Option/>
           </customproperties>
@@ -689,7 +689,7 @@
   </mapcanvas>
   <projectModels/>
   <legend updateDrawingOrder="true">
-    <legendgroup checked="Qt::Unchecked" open="false" name="OM">
+    <legendgroup checked="Qt::Unchecked" open="false" name="BAKIM">
       <legendgroup checked="Qt::Unchecked" open="true" name="Flowtrace">
         <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Flowtrace node">
           <filegroup hidden="false" open="false">
@@ -713,66 +713,66 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup checked="Qt::Checked" open="false" name="INVENTORY">
-      <legendgroup checked="Qt::Checked" open="false" name="Catalogs">
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Feature node catalog">
+    <legendgroup checked="Qt::Checked" open="false" name="ENVANTER">
+      <legendgroup checked="Qt::Checked" open="false" name="Kataloglar">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Nokta obje kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_cat_feature_node_896f1d54_369f_445d_8297_634294e52f3f" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Feature arc catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Hat obje kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_cat_feature_arc_4cd4d71c_df9e_44bf_8911_d4932f930ad2" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Feature connec catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="ABN obje kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_cat_feature_connec_507c5448_7822_4bd9_ab7e_24d7b1f11400" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Feature gully catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Izgara obje kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_cat_feature_gully_8979adc2_9078_461e_a337_347fb0723b32" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Node material catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Nokta malzeme kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_mat_node_78cd77ff_0c52_4719_a447_c588e95b21a3" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Arc material catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Hat malzeme kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_mat_arc_bba8ab41_f652_4864_95d3_45c7e39b5175" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Grate material catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Izgara malzeme kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_mat_grate_3021f691_143d_43b1_b6a3_c4c83c58791b" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Node catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Nokta kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_node_612b7617_0e3d_43f8_bffe_e49e3afa89f5" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Arc catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Hat kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_arc_52f24e12_c228_47c2_b347_69b187f2d984" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Connec catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="ABN kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_connec_c478157f_493b_462e_addb_2de2fbf4f4da" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Grate catalog">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Izgara kataloğu">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="cat_grate_c32f087c_3368_4aa6_966e_1ff0e19c5894" visible="1"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup checked="Qt::Checked" open="false" name="Map zones">
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Exploitation">
+      <legendgroup checked="Qt::Checked" open="false" name="Harita Bölgeleri">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="İşletme">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_exploitation_79f9ccda_070f_4e89_b991_6f956aec4b36" visible="1"/>
           </filegroup>
@@ -782,63 +782,63 @@
             <legendlayerfile isInOverview="0" layerid="v_edit_dma_6ef4194d_f9a3_49e1_8179_bbdcc7f6549c" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Sector">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Sektör">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_sector_d4924986_50a2_4c42_bad8_bfff1644805d" visible="1"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup checked="Qt::Checked" open="true" name="Network">
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Node">
+      <legendgroup checked="Qt::Checked" open="true" name="Şebeke">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Nokta">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_edit_node_505585a2_32e2_4c2e_a451_d9becc988d7c" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Connec">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="ABN">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_connec_8a7cc13f_d89f_485c_baa6_dea1fcfe3331" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Gully">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Izgara">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_gully_2fae9786_ee66_45f2_9da6_d665653031fb" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Arc">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Hat">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_edit_arc_20c2fc8b_1eba_4b5b_99c3_1f6836ca8281" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Link">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Abone servis hattı">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_link_0c252985_de4f_4df3_a76a_c279ffeffed8" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendgroup checked="Qt::Checked" open="false" name="Polygon">
-          <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Node polygon">
+        <legendgroup checked="Qt::Checked" open="false" name="Poligon">
+          <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Nokta poligonu">
             <filegroup hidden="false" open="false">
               <legendlayerfile isInOverview="0" layerid="ve_pol_node_5b084ed1_2aea_4af8_8ca6_dbc250e7013e" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Gully polygon">
+          <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Izgara poligonu">
             <filegroup hidden="false" open="true">
               <legendlayerfile isInOverview="0" layerid="ve_pol_gully_62d6bf96_9fb7_4951_81d1_feb290799438" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Connec polygon">
+          <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="ABN poligonu">
             <filegroup hidden="false" open="true">
               <legendlayerfile isInOverview="0" layerid="ve_pol_connec_89eb130b_0cb0_405a_a2b2_9133116f7c8e" visible="1"/>
             </filegroup>
           </legendlayer>
         </legendgroup>
       </legendgroup>
-      <legendgroup checked="Qt::Unchecked" open="false" name="Other">
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Dimensioning">
+      <legendgroup checked="Qt::Unchecked" open="false" name="Diğer">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Boyutlandırma">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_edit_dimensions_f966f7af_448b_41d3_9ac5_c8adf0f785ea" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Element">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Bileşen">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_element_e5ea3ac0_d64b_4db9_ba41_01b6ba993917" visible="0"/>
           </filegroup>
@@ -846,7 +846,7 @@
       </legendgroup>
     </legendgroup>
     <legendgroup checked="Qt::Unchecked" open="false" name="EPA">
-      <legendgroup checked="Qt::Unchecked" open="false" name="Catalogs">
+      <legendgroup checked="Qt::Unchecked" open="false" name="Kataloglar">
         <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Dscenario catalog">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_cat_dscenario_b4752e3d_3957_40bd_bea3_4533d45ebea8" visible="0"/>
@@ -1062,75 +1062,75 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup checked="Qt::Unchecked" open="false" name="MASTERPLAN">
-      <legendgroup checked="Qt::Unchecked" open="false" name="Psector">
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Plan psector">
+    <legendgroup checked="Qt::Unchecked" open="false" name="PLANLAMA">
+      <legendgroup checked="Qt::Unchecked" open="false" name="Planlanan sektör">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Planlanan sektörler">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_edit_plan_psector_4db99134_b512_43f3_8a52_b31af809fd0d" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Current psector">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Geçerli sektör">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_plan_current_psector_06064010_ae7f_4025_bcf4_3005e9b0dae9" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Plan psector connec">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Planlanan ABN">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_plan_psector_connec_05b879ed_0c68_4455_a577_9794d2572e52" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Plan psector gully">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Planlanan ızgara">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_plan_psector_gully_9b33e53f_f0da_4b5f_92d2_88291ca34736" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Plan psector node">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Planlanan nokta">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_plan_psector_node_2bc08b43_8656_4945_806f_d9098b70c8a2" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Plan psector arc">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Planlanan hat">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_plan_psector_arc_e6a59222_3da7_4c3e_a715_d992bf82c7e1" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Plan psector link">
+        <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Planlanan abone servis hattı">
           <filegroup hidden="false" open="false">
             <legendlayerfile isInOverview="0" layerid="v_plan_psector_link_736ee21c_0eef_4094_aada_ab52509e641a" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup checked="Qt::Checked" open="false" name="Prices">
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Price">
+      <legendgroup checked="Qt::Checked" open="false" name="Fiyatlar">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Fiyat">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="plan_price_9e588368_c73a_413c_9565_da06d40e509b" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Compost price">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Karma fiyatlar">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="plan_price_compost_ad0d2671_8427_4de0_adce_51edc8a29220" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup checked="Qt::Checked" open="false" name="BASEMAP">
-      <legendgroup checked="Qt::Checked" open="true" name="Address">
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Municipality">
+    <legendgroup checked="Qt::Checked" open="false" name="ALTLIKLAR">
+      <legendgroup checked="Qt::Checked" open="true" name="Adres">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="İlçe">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="ext_municipality_7901e95f_4c75_42cb_b520_f89bb2e71ff9" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Unchecked" open="true" showFeatureCount="0" drawingOrder="-1" name="Address">
+        <legendlayer checked="Qt::Unchecked" open="true" showFeatureCount="0" drawingOrder="-1" name="Adres">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_ext_address_50461371_f0e5_46c9_81f8_4c182b00a9e9" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Streetaxis">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Yolortahat">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_ext_streetaxis_8e9c4012_5761_44d2_b410_878464ca38b4" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Plot">
+        <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Yapı">
           <filegroup hidden="false" open="true">
             <legendlayerfile isInOverview="0" layerid="v_ext_plot_16824253_6498_4e46_a047_38297ad658c7" visible="1"/>
           </filegroup>
@@ -1222,7 +1222,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Arc catalog</layername>
+      <layername>Hat kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -1711,7 +1711,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Connec catalog</layername>
+      <layername>ABN kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -2002,7 +2002,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Grate catalog</layername>
+      <layername>Izgara kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -2326,7 +2326,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Arc material catalog</layername>
+      <layername>Hat malzeme kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -2496,7 +2496,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Grate material catalog</layername>
+      <layername>Izgara malzeme kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -2655,7 +2655,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Node material catalog</layername>
+      <layername>Nokta malzeme kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -2814,7 +2814,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Node catalog</layername>
+      <layername>Nokta kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -3139,7 +3139,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Municipality</layername>
+      <layername>İlçe</layername>
       <srs>
         <spatialrefsys>
           
@@ -3682,7 +3682,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Price</layername>
+      <layername>Fiyat</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -3785,7 +3785,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="price">
+        <field configurationFlags="None" name="Fiyat">
           <editWidget type="">
             <config>
               <Option/>
@@ -3805,7 +3805,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="unit" index="1" name=""/>
         <alias field="descript" index="2" name=""/>
         <alias field="text" index="3" name=""/>
-        <alias field="price" index="4" name=""/>
+        <alias field="Fiyat" index="4" name=""/>
         <alias field="pricecat_id" index="5" name=""/>
       </aliases>
       <defaults>
@@ -3813,7 +3813,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="unit"/>
         <default applyOnUpdate="0" expression="" field="descript"/>
         <default applyOnUpdate="0" expression="" field="text"/>
-        <default applyOnUpdate="0" expression="" field="price"/>
+        <default applyOnUpdate="0" expression="" field="Fiyat"/>
         <default applyOnUpdate="0" expression="" field="pricecat_id"/>
       </defaults>
       <constraints>
@@ -3821,7 +3821,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="1" notnull_strength="1" exp_strength="0" unique_strength="0" field="unit"/>
         <constraint constraints="1" notnull_strength="1" exp_strength="0" unique_strength="0" field="descript"/>
         <constraint constraints="0" notnull_strength="0" exp_strength="0" unique_strength="0" field="text"/>
-        <constraint constraints="0" notnull_strength="0" exp_strength="0" unique_strength="0" field="price"/>
+        <constraint constraints="0" notnull_strength="0" exp_strength="0" unique_strength="0" field="Fiyat"/>
         <constraint constraints="0" notnull_strength="0" exp_strength="0" unique_strength="0" field="pricecat_id"/>
       </constraints>
       <constraintExpressions>
@@ -3829,7 +3829,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="unit" exp="" desc=""/>
         <constraint field="descript" exp="" desc=""/>
         <constraint field="text" exp="" desc=""/>
-        <constraint field="price" exp="" desc=""/>
+        <constraint field="Fiyat" exp="" desc=""/>
         <constraint field="pricecat_id" exp="" desc=""/>
       </constraintExpressions>
       <expressionfields/>
@@ -3842,7 +3842,7 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="unit"/>
           <column hidden="0" width="-1" type="field" name="descript"/>
           <column hidden="0" width="-1" type="field" name="text"/>
-          <column hidden="0" width="-1" type="field" name="price"/>
+          <column hidden="0" width="-1" type="field" name="Fiyat"/>
           <column hidden="0" width="-1" type="field" name="pricecat_id"/>
           <column hidden="1" width="-1" type="actions"/>
         </columns>
@@ -3873,7 +3873,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Compost price</layername>
+      <layername>Karma fiyatlar</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -5631,7 +5631,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Arc</layername>
+      <layername>Hat</layername>
       <srs>
         <spatialrefsys>
           
@@ -8784,7 +8784,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Feature arc catalog</layername>
+      <layername>Hat obje kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -8987,7 +8987,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Feature connec catalog</layername>
+      <layername>ABN obje kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -9190,7 +9190,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Feature gully catalog</layername>
+      <layername>Izgara obje kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -9404,7 +9404,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Feature node catalog</layername>
+      <layername>Nokta obje kataloğu</layername>
       <srs>
         <spatialrefsys>
           <wkt></wkt>
@@ -9910,7 +9910,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Connec</layername>
+      <layername>ABN</layername>
       <srs>
         <spatialrefsys>
           
@@ -11267,7 +11267,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Dimensioning</layername>
+      <layername>Boyutlandırma</layername>
       <srs>
         <spatialrefsys>
           
@@ -14319,7 +14319,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Element</layername>
+      <layername>Bileşen</layername>
       <srs>
         <spatialrefsys>
           
@@ -15074,7 +15074,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Exploitation</layername>
+      <layername>İşletme</layername>
       <srs>
         <spatialrefsys>
           
@@ -15329,7 +15329,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Gully</layername>
+      <layername>Izgara</layername>
       <srs>
         <spatialrefsys>
           
@@ -27458,7 +27458,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Link</layername>
+      <layername>Abone servis hattı</layername>
       <srs>
         <spatialrefsys>
           
@@ -28111,7 +28111,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Node</layername>
+      <layername>Nokta</layername>
       <srs>
         <spatialrefsys>
           
@@ -30355,7 +30355,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plan psector</layername>
+      <layername>Planlanan sektörler</layername>
       <srs>
         <spatialrefsys>
           
@@ -31574,7 +31574,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Sector</layername>
+      <layername>Sektör</layername>
       <srs>
         <spatialrefsys>
           
@@ -31829,7 +31829,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Address</layername>
+      <layername>Adres</layername>
       <srs>
         <spatialrefsys>
           
@@ -32443,7 +32443,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plot</layername>
+      <layername>Yapı</layername>
       <srs>
         <spatialrefsys>
           
@@ -32967,7 +32967,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Streetaxis</layername>
+      <layername>Yolortahat</layername>
       <srs>
         <spatialrefsys>
           
@@ -33600,7 +33600,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Current psector</layername>
+      <layername>Geçerli sektör</layername>
       <srs>
         <spatialrefsys>
           
@@ -34434,7 +34434,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plan psector arc</layername>
+      <layername>Planlanan hat</layername>
       <srs>
         <spatialrefsys>
           
@@ -34777,7 +34777,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plan psector connec</layername>
+      <layername>Planlanan ABN</layername>
       <srs>
         <spatialrefsys>
           
@@ -35302,7 +35302,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plan psector gully</layername>
+      <layername>Planlanan ızgara</layername>
       <srs>
         <spatialrefsys>
           
@@ -35778,7 +35778,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plan psector link</layername>
+      <layername>Planlanan abone servis hattı</layername>
       <srs>
         <spatialrefsys>
           
@@ -36152,7 +36152,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Plan psector node</layername>
+      <layername>Planlanan nokta</layername>
       <srs>
         <spatialrefsys>
           
@@ -45782,7 +45782,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Connec polygon</layername>
+      <layername>ABN poligonu</layername>
       <srs>
         <spatialrefsys>
           
@@ -46138,7 +46138,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Gully polygon</layername>
+      <layername>Izgara poligonu</layername>
       <srs>
         <spatialrefsys>
           
@@ -46491,7 +46491,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Node polygon</layername>
+      <layername>Nokta poligonu</layername>
       <srs>
         <spatialrefsys>
           
@@ -63272,7 +63272,7 @@ def my_form_open(dialog, layer, feature):
           <Option value="png" type="QString" name="atlasRasterFormat"/>
         </Option>
       </customproperties>
-      <Atlas hideCoverage="1" coverageLayer="v_plan_current_psector_06064010_ae7f_4025_bcf4_3005e9b0dae9" filenamePattern="'output_'||@atlas_featurenumber" sortKey="psector_id" coverageLayerSource=" __DATASOURCE__ key='psector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_current_psector&quot; (the_geom)" sortFeatures="1" filterFeatures="1" enabled="1" coverageLayerProvider="postgres" featureFilter=" &quot;psector_id&quot; " coverageLayerName="Current psector" pageNameExpression="&quot;name&quot;" sortAscending="1"/>
+      <Atlas hideCoverage="1" coverageLayer="v_plan_current_psector_06064010_ae7f_4025_bcf4_3005e9b0dae9" filenamePattern="'output_'||@atlas_featurenumber" sortKey="psector_id" coverageLayerSource=" __DATASOURCE__ key='psector_id' srid=__SRID__ type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;SCHEMA_NAME&quot;.&quot;v_plan_current_psector&quot; (the_geom)" sortFeatures="1" filterFeatures="1" enabled="1" coverageLayerProvider="postgres" featureFilter=" &quot;psector_id&quot; " coverageLayerName="Geçerli sektör" pageNameExpression="&quot;name&quot;" sortAscending="1"/>
     </Layout>
   </Layouts>
   <Bookmarks/>

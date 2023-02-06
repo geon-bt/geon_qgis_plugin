@@ -861,6 +861,7 @@ class GwSearch:
             list_coord = re.search('\((.*)\)', str(complet_result['body']['feature']['geometry']['st_astext']))
             max_x, max_y, min_x, min_y = tools_qgis.get_max_rectangle_from_coords(list_coord)
             tools_qgis.zoom_to_rectangle(max_x, max_y, min_x, min_y, 1)
+            print(list_coord)
         except Exception:
             pass
 
